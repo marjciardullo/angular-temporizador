@@ -1,0 +1,16 @@
+<h2>Contador de segundos</h2>
+<hr />
+<br />
+Digite abaixo um intervalo de segundos:
+<br />
+<input type="number" [(ngModel)]="seconds" />
+<br />
+<br />
+Olha! O temporizador incializou com sua contagem com um intervalo de
+{{ this.seconds }} segundos!
+<br />
+{{ temporizador.getCount() }}
+<br />
+<br />
+<button (click)="temporizador.start(this.seconds * 1000)">Iniciar</button> |
+<button (click)="temporizador.stop()">Parar</button>
