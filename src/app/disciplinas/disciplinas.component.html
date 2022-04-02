@@ -26,8 +26,9 @@
     <tbody>
       <tr *ngFor="let disciplina of disciplinas.getList(); index as i">
         <td>{{ disciplina.title }}</td>
-        <td>{{ disciplina.diaSemana }}</td>
         <td>{{ disciplina.horario }} horas</td>
+        <td>{{ disciplina.diaSemana }}</td>
+
         <td>
           <span (click)="disciplinas.remove(i)" style="cursor: pointer">X</span>
         </td>
