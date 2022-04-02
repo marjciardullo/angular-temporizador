@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DisciplinasService } from '../disciplinas.service';
 
 @Component({
   selector: 'app-disciplinas',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./disciplinas.component.css'],
 })
 export class DisciplinasComponent implements OnInit {
-  constructor() {}
+  title: string;
+  horario: number;
+  diaSemana: string;
+  constructor(public disciplinas: DisciplinasService) {
+    this.title = '';
+    this.horario = 0;
+    this.diaSemana = '';
+  }
 
   ngOnInit() {}
 }

@@ -1,0 +1,37 @@
+<h2>Disciplinas cursadas</h2>
+
+<p>Nome da Disciplina:</p>
+<input type="text" [(ngModel)]="title" />
+
+<p>Horário da disciplina:</p>
+<input type="number" [(ngModel)]="horario" />
+
+<p>Dia da disciplina:</p>
+<input type="text" [(ngModel)]="diaSemana" />
+
+<br />
+<br />
+<button (click)="disciplinas.add(title, horario, diaSemana)">Adicionar</button>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Horario</th>
+        <th>Dia da Semana</th>
+        <th>Apagar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let disciplina of disciplinas.getList(); index as i">
+        <td>{{ disciplina.title }}</td>
+        <td>{{ disciplina.diaSemana }}</td>
+        <td>{{ disciplina.horario }} horas</td>
+        <td>
+          <span (click)="disciplinas.remove(i)" style="cursor: pointer">X</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
